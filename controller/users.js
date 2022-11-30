@@ -17,6 +17,27 @@ const registration = ((req,res)=>{
     }
 })
 const login= ((req,res)=>{
+    const {email,password}= req.body;
+    console.log(req.body)
+    if(fs.existsSync(`./users/${email}.txt`)){
+
+    
+   let data= fs.readFileSync(`./users/${email}.txt`);
+        var array = data.toString().split("\n");
+        for(i in array){
+            if(password==array[3])
+         {
+            res.render('user',{email:email}); 
+          
+         }
+         else{
+            res.render('login',{errmsg:"password  not matched"});
+         }
+        }
+}
+else{
+    res.render('login',{errmsg:"file is not in our system"});
+}
 
 })
 module.exports={registration,login};

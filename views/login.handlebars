@@ -12,40 +12,58 @@
 <body>
     {{> nav}}
     <br>
+   
     <section class="container p-5" >
         <h2 class="text-center">Login </h2>
-<form>
-  <!-- Email input -->
-  <div class="form-outline mb-4">
-    <input type="email" id="form2Example1" class="form-control" />
-    <label class="form-label" for="form2Example1">Email address</label>
-  </div>
+<form action="/user/postlogin" method="post">
+ {{#if errmsg}}
+    
+      <div class="alert alert-danger">{{errmsg}}</div>
+    {{/if}}
+      <div class="text-center mb-3">
+        <p>Sign up with:</p>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="bi bi-facebook"></i>
+        </button>
 
-  <!-- Password input -->
-  <div class="form-outline mb-4">
-    <input type="password" id="form2Example2" class="form-control" />
-    <label class="form-label" for="form2Example2">Password</label>
-  </div>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="bi bi-google"></i>
+        </button>
 
-  <!-- 2 column grid layout for inline styling -->
-  <div class="row mb-4">
-    <div class="col d-flex justify-content-center">
-      <!-- Checkbox -->
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-        <label class="form-check-label" for="form2Example31"> Remember me </label>
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="bi bi-twitter"></i>
+        </button>
+
+        <button type="button" class="btn btn-link btn-floating mx-1">
+          <i class="bi bi-github"></i>
+        </button>
       </div>
-    </div>
 
-    <div class="col">
-      <!-- Simple link -->
-      <a href="#!">Forgot password?</a>
-    </div>
-  </div>
+      <p class="text-center">or:</p>
 
-  <!-- Submit button -->
-  <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+      <!-- Name input -->
+      
 
+     
+
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <input type="email" id="registerEmail" name="email" class="form-control" required/>
+        <label class="form-label" for="registerEmail">Email</label>
+      </div>
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <input type="password" id="registerPassword" name="password" class="form-control"required/>
+        <label class="form-label" for="registerPassword">Password</label>
+      </div>
+
+
+      
+
+      <!-- Submit button -->
+      <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
+    </form>
   <!-- Register buttons -->
   <div class="text-center">
     <p>Not a member? <a href="/user/register">Register</a></p>
@@ -66,7 +84,7 @@
       <i class="bi bi-github"></i>
     </button>
   </div>
-</form>
+
         </section>       
   
 </body>
