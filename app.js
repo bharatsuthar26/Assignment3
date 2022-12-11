@@ -16,9 +16,9 @@ app.use("/user",userRoutes);
 app.use("*",(req,res)=>{
     res.render("notfound");
 })
-app.get("/",(req,res)=>{
-    res.render('index');
-})
+// app.get("/",(req,res)=>{
+//     res.render('index');
+// })
 app.listen(PORT,(err)=>{
     if(err) throw err
     else {

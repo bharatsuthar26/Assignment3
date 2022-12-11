@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>
-<body>
+<body style="background-size:cover;background-image: url(https://photoshopstar.com/media/2015/11285/LF_3.jpg);">
     {{> nav}}
 
 
-    <section class="container p-5" >
-    <h2 class="text-center">Register Page</h2>
+    <section class="container p-1" >
+    <h2>Register Page</h2>
           
            {{#if errMsg}}
              <div class="alert alert-danger"> {{errMsg}}</div>
@@ -22,8 +22,7 @@
              <div class="alert alert-success"> {{succMsg}}</div>
            {{/if}}
          
-
-    <form action="/user/postdata" method="post">
+        <form action="/user/postdata" class="w-25" method="post">
       <div class="text-center mb-3">
         <p>Sign up with:</p>
         <button type="button" class="btn btn-link btn-floating mx-1">
@@ -81,6 +80,11 @@
       <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
     </form>
 
+
+
     </section>
+
+    {{> footer}}
+
 </body>
 </html>
